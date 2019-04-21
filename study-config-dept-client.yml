@@ -1,0 +1,47 @@
+spring: 
+  profiles:
+    active:
+    - dev
+--- 
+server:
+  port: 8001
+spring: 
+   profiles: dev
+   application: 
+    name: microservicecloud-config-dept-client
+ 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka10001.com:10001/eureka/
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+ 
+info:
+  app.name: atguigu-microservicecloud-springcloudconfig01
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 8001
+spring: 
+   profiles: test
+   application: 
+    name: microservicecloud-config-dept-client
+   
+ 
+eureka: 
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka10001.com:10001/eureka/
+  instance:
+    instance-id: dept-8001.com
+    prefer-ip-address: true
+ 
+info:
+  app.name: atguigu-microservicecloud-springcloudconfig02
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
