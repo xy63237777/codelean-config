@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server: 
+  port: 8201 
+spring:
+  profiles: dev
+  application: 
+    name: study-config-client
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7777.com:7777/eureka/  
+---
+server: 
+  port: 8202 
+spring:
+  profiles: test
+  application: 
+    name: study-config-client
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7777.com:7777/eureka/
+ 
